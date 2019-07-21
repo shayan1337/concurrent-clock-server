@@ -32,7 +32,7 @@ func main() {
 func handleConnection(conn net.Conn) {
 	defer conn.Close()
 	for {
-		_, err := io.WriteString(conn, time.Now().String())
+		_, err := io.WriteString(conn, time.Now().Format("15:04:05\n"))
 		if err != nil {
 			return
 		}
