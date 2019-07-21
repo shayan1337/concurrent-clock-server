@@ -14,6 +14,10 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	log.Println("Server running on port 8000::::::::")
+	defer func() {
+		log.Println("Server stopped")
+	}()
 
 	for {
 		connection, err := listener.Accept()
